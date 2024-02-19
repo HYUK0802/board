@@ -10,7 +10,7 @@
     </sql>
 
 <!--    게시글저장-->
-    <insert id="save" parameterType="com.hyuk.board.entity.PostRequest">
+    <insert id="save" parameterType="com.hyuk.board.entity.PostRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO `hyuk`.`board` (<include refid="postColumns" />)
         values (
                 #{id},
