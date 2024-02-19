@@ -1,8 +1,11 @@
 package com.hyuk.board.mapper;
 
 import com.hyuk.board.entity.PostRequest;
+import com.hyuk.board.entity.PostResponse;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Mapper
 public interface BoardMapper {
@@ -12,4 +15,39 @@ public interface BoardMapper {
      * @param params - 게시글 정보
      */
     void save(PostRequest param);
+
+    /**
+     * 게시글 상세정보 조회
+     *
+     * @param id - PK
+     * @return 게시글 상세정보
+     */
+    PostResponse findById(Long id);
+
+    /**
+     * 게시글 수정
+     *
+     * @param params - 게시글 정보
+     */
+    void update(PostRequest params);
+
+    /**
+     * 게시글 삭제
+     *
+     * @param id - PK
+     */
+    void deleteById(Long id);
+
+    /**
+     * 게시글 리스트 조회
+     * @return 게시글 리스트
+     */
+    List<PostResponse> findAll();
+
+    /**
+     * 게시글 수 카운팅
+     * @return 게시글 수
+     */
+    int count();
+
 }
