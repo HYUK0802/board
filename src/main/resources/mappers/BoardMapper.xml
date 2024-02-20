@@ -50,9 +50,17 @@
 <!--    게시글 리스트 조회-->
     <select id="findAll" resultType="com.hyuk.board.entity.PostResponse">
         SELECT
-            <include refid="postColumns"/>
+        <include refid="postColumns" />
+        FROM
+        `hyuk`.`board`
+        WHERE
+        delete_yn = 0
+        ORDER BY
+        id DESC
+    </select>
+    <select id="findById" parameterType="long" resultType="com.hyuk.board.entity.PostResponse">
+        SELECT <include refid="postColumns"/>
             FROM `hyuk`.`board`
-        WHERE delete_yn = 0
-        ORDER BY id desc
+        WHERE id = #{value}
     </select>
 </mapper>

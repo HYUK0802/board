@@ -36,6 +36,13 @@ public class BoardController {
         return "post/list";
     }
 
+    @GetMapping("/post/view.do")
+    public String openPostView(@RequestParam final Long id, Model model) {
+        PostResponse post = postService.findPostById(id);
+        model.addAttribute("post", post);
+        return "post/view";
+    }
+
     @PostMapping("/post/save.do")
     public String savePost(final PostRequest params) {
         postService.savePost(params);
