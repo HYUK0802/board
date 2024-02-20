@@ -22,7 +22,7 @@
                     <td th:text="${post.noticeYn == false ? '일반' : '공지'}"></td>
 
                     <th scope="row">등록일</th>
-                    <td th:text="${#temporals.format( post.createdDate, 'yyyy-MM-dd HH:mm' )}"></td>
+                    <td th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm' )}"></td>
                 </tr>
                 <tr>
                     <th scope="row">제목</th>

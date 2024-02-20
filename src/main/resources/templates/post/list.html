@@ -48,7 +48,8 @@
                     <td th:text="${row.noticeYn == false ? (status.size - status.index) : '공지'}"></td>
                     <td class="tl"><a th:href="@{/post/view.do( id=${row.id} )}" th:text="${row.title}"></a></td>
                     <td th:text="${row.writer}"></td>
-                    <td th:text="${#temporals.format( row.createdDate, 'yyyy-MM-dd HH:mm' )}"></td>
+                    <td th:text="${#temporals.format(row.createdDate, 'yyyy-MM-dd HH:mm')}"></td>
+                    <!--                    <td th:text="${row.createdDate}"></td>-->
                     <td th:text="${row.viewCnt}"></td>
                 </tr>
 
@@ -62,9 +63,17 @@
 
             <!--/* 페이지네이션 */-->
             <div class="paging">
-                <a href="#" class="page_bt first">첫 페이지</a><a href="#" class="page_bt prev">이전 페이지 그룹</a>
-                <p><span class="on">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a></p>
-                <a href="#" class="page_bt next">다음 페이지 그룹</a><a href="#" class="page_bt last">마지막 페이지</a>
+                <a href="#" class="page_bt first">첫 페이지</a>
+                <a href="#" class="page_bt prev">이전 페이지 그룹</a>
+                <p><span class="on">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a><a href="#">5</a>
+                    <a href="#">6</a><a href="#">7</a>
+                    <a href="#">8</a><a href="#">9</a>
+                    <a href="#">10</a></p>
+                <a href="#" class="page_bt next">다음 페이지 그룹</a>
+                <a href="#" class="page_bt last">마지막 페이지</a>
             </div>
 
             <!--/* 버튼 */-->
