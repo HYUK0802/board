@@ -4,6 +4,7 @@ import com.hyuk.board.dto.MessageDto;
 import com.hyuk.board.dto.SearchDto;
 import com.hyuk.board.entity.PostRequest;
 import com.hyuk.board.entity.PostResponse;
+import com.hyuk.board.paging.PagingResponse;
 import com.hyuk.board.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -30,8 +31,8 @@ public class BoardController {
 
     @GetMapping("/post/list.do")
     public String openPostList(@ModelAttribute("params") final SearchDto params, Model model) {
-        List<PostResponse> posts = postService.findAllPost(params);
-        model.addAttribute("posts", posts);
+        PagingResponse<PostResponse> response = postService.findAllPost(params);
+        model.addAttribute("response", response);
         return "post/list";
     }
 
