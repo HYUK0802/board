@@ -1,5 +1,6 @@
 package com.hyuk.board.mapper;
 
+import com.hyuk.board.dto.SearchDto;
 import com.hyuk.board.entity.PostRequest;
 import com.hyuk.board.entity.PostResponse;
 import org.apache.ibatis.annotations.Mapper;
@@ -42,12 +43,12 @@ public interface BoardMapper {
      * 게시글 리스트 조회
      * @return 게시글 리스트
      */
-    List<PostResponse> findAll();
+    List<PostResponse> findAll(SearchDto params);
 
     /**
      * 게시글 수 카운팅
      * @return 게시글 수
      */
-    int count();
+    int count(SearchDto params);
 
 }

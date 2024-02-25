@@ -48,7 +48,7 @@
     </delete>
 
 <!--    게시글 리스트 조회-->
-    <select id="findAll" resultType="com.hyuk.board.entity.PostResponse">
+    <select id="findAll" parameterType="com.hyuk.board.entity.PostResponse" resultType="com.hyuk.board.entity.PostResponse">
         SELECT
         <include refid="postColumns" />
         FROM
@@ -57,7 +57,16 @@
         delete_yn = 0
         ORDER BY
         id DESC
+        LIMIT #{offset}, #{recordSize}
     </select>
+
+<!--    게시글 수 카운팅-->
+    <select id="count" parameterType="com.hyuk.board.dto.SearchDto" resultType="int">
+        SELECT COUNT(*)
+        FROM `hyuk`.`board`
+        WHERE delete_yn = 0
+    </select>
+
     <select id="findById" parameterType="long" resultType="com.hyuk.board.entity.PostResponse">
         SELECT <include refid="postColumns"/>
             FROM `hyuk`.`board`

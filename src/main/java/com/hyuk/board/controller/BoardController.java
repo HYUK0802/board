@@ -1,6 +1,7 @@
 package com.hyuk.board.controller;
 
 import com.hyuk.board.dto.MessageDto;
+import com.hyuk.board.dto.SearchDto;
 import com.hyuk.board.entity.PostRequest;
 import com.hyuk.board.entity.PostResponse;
 import com.hyuk.board.service.PostService;
@@ -28,8 +29,8 @@ public class BoardController {
     }
 
     @GetMapping("/post/list.do")
-    public String openPostList(Model model) {
-        List<PostResponse> posts = postService.findAllPost();
+    public String openPostList(@ModelAttribute("params") final SearchDto params, Model model) {
+        List<PostResponse> posts = postService.findAllPost(params);
         model.addAttribute("posts", posts);
         return "post/list";
     }

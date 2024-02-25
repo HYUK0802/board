@@ -1,5 +1,6 @@
 package com.hyuk.board.service;
 
+import com.hyuk.board.dto.SearchDto;
 import com.hyuk.board.entity.PostRequest;
 import com.hyuk.board.entity.PostResponse;
 import com.hyuk.board.mapper.BoardMapper;
@@ -57,7 +58,7 @@ public class PostService {
      * 게시글 리스트 조회
      * @return 게시글 리스트
      */
-    public List<PostResponse> findAllPost(){
-        return boardMapper.findAll();
+    public List<PostResponse> findAllPost(final SearchDto params){
+        return boardMapper.findAll(params);
     }
 }
