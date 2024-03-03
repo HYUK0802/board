@@ -45,4 +45,18 @@ public interface CommentMapper {
      * @return 댓글 수
      */
     int count(Long postId);
+
+    /**
+     * 댓글 리스트 조회
+     * @param params - search conditions
+     * @return 댓글 리스트
+     */
+    List<CommentResponse> findAll(CommentSearchDto params);
+
+    /**
+     * 댓글 수 카운팅
+     * @param params - search conditions
+     * @return 댓글 수
+     */
+    int count(CommentSearchDto params);
 }

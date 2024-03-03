@@ -66,5 +66,12 @@
             AND post_id = #{value}
         ORDER BY
             id DESC
+        LIMIT #{pagination.limitStart}, #{recordSize}
+    </select>
+<!--    댓글 수 카운팅-->
+    <select id="count" parameterType="com.hyuk.board.comment.CommentSearchDto" resultType="int">
+        SELECT COUNT(*)
+        FROM `hyuk`.`tb_comment`
+        WHERE delete_yn = 0 AND post_id = #{postId}
     </select>
 </mapper>
