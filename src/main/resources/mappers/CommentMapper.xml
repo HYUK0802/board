@@ -55,23 +55,29 @@
         WHERE id = #{id}
     </delete>
 
-<!--    댓글 리스트 조회-->
-    <select id="findAll" parameterType="long" resultType="com.hyuk.board.comment.CommentResponse">
+    <!-- 댓글 리스트 조회 -->
+    <select id="findAll" parameterType="com.hyuk.board.comment.CommentSearchDto" resultType="com.hyuk.board.comment.CommentResponse">
         SELECT
-            <include refid="commentColumns"/>
+        <include refid="commentColumns" />
+        FROM
+        `hyuk`.`tb_comment`
+        WHERE
+        delete_yn = 0
+        AND post_id = #{postId}
+        ORDER BY
+        id DESC
+        LIMIT #{pagination.limitStart}, #{recordSize}
+    </select>
+
+
+    <!-- 댓글 수 카운팅 -->
+    <select id="count" parameterType="com.hyuk.board.comment.CommentSearchDto" resultType="int">
+        SELECT
+            COUNT(*)
         FROM
             `hyuk`.`tb_comment`
         WHERE
             delete_yn = 0
-            AND post_id = #{value}
-        ORDER BY
-            id DESC
-        LIMIT #{pagination.limitStart}, #{recordSize}
-    </select>
-<!--    댓글 수 카운팅-->
-    <select id="count" parameterType="com.hyuk.board.comment.CommentSearchDto" resultType="int">
-        SELECT COUNT(*)
-        FROM `hyuk`.`tb_comment`
-        WHERE delete_yn = 0 AND post_id = #{postId}
+          AND post_id = #{postId}
     </select>
 </mapper>
