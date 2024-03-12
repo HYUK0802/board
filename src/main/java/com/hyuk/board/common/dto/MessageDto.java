@@ -1,4 +1,4 @@
-package com.hyuk.board.dto;
+package com.hyuk.board.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

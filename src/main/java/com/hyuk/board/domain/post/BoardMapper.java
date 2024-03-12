@@ -1,10 +1,9 @@
-package com.hyuk.board.mapper;
+package com.hyuk.board.domain.post;
 
-import com.hyuk.board.dto.SearchDto;
-import com.hyuk.board.entity.PostRequest;
-import com.hyuk.board.entity.PostResponse;
+import com.hyuk.board.common.dto.SearchDto;
+import com.hyuk.board.domain.post.PostRequest;
+import com.hyuk.board.domain.post.PostResponse;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 

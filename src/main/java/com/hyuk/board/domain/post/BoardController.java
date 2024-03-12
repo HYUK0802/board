@@ -1,20 +1,18 @@
-package com.hyuk.board.controller;
+package com.hyuk.board.domain.post;
 
-import com.hyuk.board.dto.MessageDto;
-import com.hyuk.board.dto.SearchDto;
-import com.hyuk.board.entity.PostRequest;
-import com.hyuk.board.entity.PostResponse;
-import com.hyuk.board.paging.PagingResponse;
-import com.hyuk.board.service.PostService;
+import com.hyuk.board.common.dto.MessageDto;
+import com.hyuk.board.common.dto.SearchDto;
+import com.hyuk.board.domain.post.PostRequest;
+import com.hyuk.board.domain.post.PostResponse;
+import com.hyuk.board.common.paging.PagingResponse;
+import com.hyuk.board.domain.post.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @Controller
 @RequiredArgsConstructor

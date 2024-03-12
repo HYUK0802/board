@@ -1,13 +1,8 @@
 package com.hyuk.board;
 
-import com.hyuk.board.entity.PostRequest;
-import com.hyuk.board.entity.PostResponse;
-import com.hyuk.board.mapper.BoardMapper;
-import org.junit.jupiter.api.Test;
+import com.hyuk.board.domain.post.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @SpringBootTest
 public class PostMapperTest {

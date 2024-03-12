@@ -1,4 +1,4 @@
-package com.hyuk.board.member;
+package com.hyuk.board.domain.member;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -36,4 +36,5 @@ public interface MemberMapper {
      * @return 회원 수
      */
     int countByLoginId(String loginId);
+
 }

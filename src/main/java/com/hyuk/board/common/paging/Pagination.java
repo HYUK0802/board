@@ -1,6 +1,6 @@
-package com.hyuk.board.paging;
+package com.hyuk.board.common.paging;
 
-import com.hyuk.board.dto.SearchDto;
+import com.hyuk.board.common.dto.SearchDto;
 import lombok.Getter;
 
 @Getter

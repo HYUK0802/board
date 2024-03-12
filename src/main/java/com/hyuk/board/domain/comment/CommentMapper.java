@@ -1,4 +1,4 @@
-package com.hyuk.board.comment;
+package com.hyuk.board.domain.comment;
 
 import org.apache.ibatis.annotations.Mapper;
 

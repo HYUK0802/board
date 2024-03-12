@@ -1,4 +1,4 @@
-package com.hyuk.board.member;
+package com.hyuk.board.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -80,5 +80,6 @@ public class MemberService {
         member.clearPassword();
         return member;
     }
+
 
 }

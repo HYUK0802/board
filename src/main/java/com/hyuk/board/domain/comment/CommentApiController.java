@@ -1,10 +1,8 @@
-package com.hyuk.board.comment;
+package com.hyuk.board.domain.comment;
 
-import com.hyuk.board.paging.PagingResponse;
+import com.hyuk.board.common.paging.PagingResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

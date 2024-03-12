@@ -1,6 +1,6 @@
 package com.hyuk.board.interceptor;
 
-import com.hyuk.board.member.MemberResponse;
+import com.hyuk.board.domain.member.MemberResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;

@@ -1,4 +1,4 @@
-package com.hyuk.board.member;
+package com.hyuk.board.domain.member;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -24,7 +24,6 @@ public class MemberController {
     public Long saveMember(@RequestBody final MemberRequest params) {
         return memberService.saveMember(params);
     }
-
     // 회원 상세정보 조회
     @GetMapping("/members/{loginId}")
     @ResponseBody

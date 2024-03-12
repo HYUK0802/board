@@ -1,7 +1,7 @@
 package com.hyuk.board;
 
-import com.hyuk.board.entity.PostRequest;
-import com.hyuk.board.service.PostService;
+import com.hyuk.board.domain.post.PostRequest;
+import com.hyuk.board.domain.post.PostService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

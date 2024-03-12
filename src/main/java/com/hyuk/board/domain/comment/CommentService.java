@@ -1,7 +1,7 @@
-package com.hyuk.board.comment;
+package com.hyuk.board.domain.comment;
 
-import com.hyuk.board.paging.Pagination;
-import com.hyuk.board.paging.PagingResponse;
+import com.hyuk.board.common.paging.Pagination;
+import com.hyuk.board.common.paging.PagingResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

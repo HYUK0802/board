@@ -1,6 +1,6 @@
-package com.hyuk.board.dto;
+package com.hyuk.board.common.dto;
 
-import com.hyuk.board.paging.Pagination;
+import com.hyuk.board.common.paging.Pagination;
 import lombok.Getter;
 import lombok.Setter;
 

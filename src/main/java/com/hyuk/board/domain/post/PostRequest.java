@@ -1,4 +1,4 @@
-package com.hyuk.board.entity;
+package com.hyuk.board.domain.post;
 
 import lombok.Data;
 import lombok.Getter;

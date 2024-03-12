@@ -1,4 +1,4 @@
-package com.hyuk.board.paging;
+package com.hyuk.board.common.paging;
 
 import lombok.Getter;
 

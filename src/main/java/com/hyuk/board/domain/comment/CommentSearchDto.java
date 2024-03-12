@@ -1,6 +1,6 @@
-package com.hyuk.board.comment;
+package com.hyuk.board.domain.comment;
 
-import com.hyuk.board.dto.SearchDto;
+import com.hyuk.board.common.dto.SearchDto;
 import lombok.Getter;
 import lombok.Setter;
 

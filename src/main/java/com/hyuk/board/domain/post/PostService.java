@@ -1,11 +1,8 @@
-package com.hyuk.board.service;
+package com.hyuk.board.domain.post;
 
-import com.hyuk.board.dto.SearchDto;
-import com.hyuk.board.entity.PostRequest;
-import com.hyuk.board.entity.PostResponse;
-import com.hyuk.board.mapper.BoardMapper;
-import com.hyuk.board.paging.Pagination;
-import com.hyuk.board.paging.PagingResponse;
+import com.hyuk.board.common.dto.SearchDto;
+import com.hyuk.board.common.paging.Pagination;
+import com.hyuk.board.common.paging.PagingResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

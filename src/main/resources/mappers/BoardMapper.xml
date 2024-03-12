@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyuk.board.mapper.BoardMapper">
+<mapper namespace="com.hyuk.board.domain.post.BoardMapper">
 
 <!--    board 테이블 전체 컬럼-->
     <sql id="postColumns">
@@ -10,7 +10,7 @@
     </sql>
 
 <!--    게시글저장-->
-    <insert id="save" parameterType="com.hyuk.board.entity.PostRequest" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterType="com.hyuk.board.domain.post.PostRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO `hyuk`.`board` (<include refid="postColumns" />)
         values (
                 #{id},
@@ -26,7 +26,7 @@
     </insert>
 
 <!--    게시글 수정-->
-    <update id="update" parameterType="com.hyuk.board.entity.PostRequest">
+    <update id="update" parameterType="com.hyuk.board.domain.post.PostRequest">
         UPDATE `hyuk`.`board`
         SET
             modified_date = NOW(),
@@ -48,7 +48,7 @@
     </delete>
 
 <!--    게시글 리스트 조회-->
-    <select id="findAll" parameterType="com.hyuk.board.entity.PostResponse" resultType="com.hyuk.board.entity.PostResponse">
+    <select id="findAll" parameterType="com.hyuk.board.domain.post.PostResponse" resultType="com.hyuk.board.domain.post.PostResponse">
         SELECT
         <include refid="postColumns" />
         FROM
@@ -62,14 +62,14 @@
     </select>
 
 <!--    게시글 수 카운팅-->
-    <select id="count" parameterType="com.hyuk.board.dto.SearchDto" resultType="int">
+    <select id="count" parameterType="com.hyuk.board.common.dto.SearchDto" resultType="int">
         SELECT COUNT(*)
         FROM `hyuk`.`board`
         WHERE delete_yn = 0
               <include refid="search"/>
     </select>
 
-    <select id="findById" parameterType="long" resultType="com.hyuk.board.entity.PostResponse">
+    <select id="findById" parameterType="long" resultType="com.hyuk.board.domain.post.PostResponse">
         SELECT <include refid="postColumns"/>
             FROM `hyuk`.`board`
         WHERE id = #{value}
