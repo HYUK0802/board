@@ -2,23 +2,27 @@ package com.hyuk.board.domain.post;
 
 import com.hyuk.board.common.dto.MessageDto;
 import com.hyuk.board.common.dto.SearchDto;
-import com.hyuk.board.domain.post.PostRequest;
-import com.hyuk.board.domain.post.PostResponse;
+import com.hyuk.board.domain.file.FileRequest;
+import com.hyuk.board.domain.file.FileService;
+import com.hyuk.board.common.file.FileUtils;
 import com.hyuk.board.common.paging.PagingResponse;
-import com.hyuk.board.domain.post.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
 public class BoardController {
 
+
     private final PostService postService;
+    private final FileService fileService;
+    private final FileUtils fileUtils;
 
     // 게시글 작성 페이지
     @GetMapping("/post/write.do")
@@ -47,7 +51,9 @@ public class BoardController {
     // 신규 게시물 수정
     @PostMapping("/post/save.do")
     public String savePost(final PostRequest params, Model model) {
-        postService.savePost(params);
+        Long id = postService.savePost(params);
+        List<FileRequest> files = fileUtils.uploadFiles(params.getFiles());
+        fileService.saveFiles(id, files);
         MessageDto message = new MessageDto("게시글 생성이 완료되었습니다.", "/post/list.do", RequestMethod.GET, null);
         return showMessageAndRedirect(message, model);
     }
