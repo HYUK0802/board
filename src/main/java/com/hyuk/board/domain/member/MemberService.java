@@ -66,6 +66,12 @@ public class MemberService {
         return memberMapper.countByLoginId(loginId);
     }
 
+    /**
+     * 로그인
+     * @param loginId - 로그인 ID
+     * @param password - 비밀번호
+     * @return 회원 상세정보
+     */
     public MemberResponse login(final String loginId, final String password) {
 
         // 1. 회원 정보 및 비밀번호 조회
