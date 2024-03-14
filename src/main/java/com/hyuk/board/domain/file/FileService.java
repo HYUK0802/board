@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -22,6 +23,25 @@ public class FileService {
             file.setPostId(postId);
         }
         fileMapper.saveAll(files);
+    }
+
+    public List<FileResponse> findAllFileByPostId(final Long postId) {
+        return fileMapper.findAllByPostId(postId);
+    }
+
+    public List<FileResponse> findAllFileByIds(final List<Long> ids) {
+        if (CollectionUtils.isEmpty(ids)) {
+            return Collections.emptyList();
+        }
+        return fileMapper.findAllByIds(ids);
+    }
+
+    @Transactional
+    public void deleteAllFileByIds(final List<Long> ids) {
+        if (CollectionUtils.isEmpty(ids)) {
+            return;
+        }
+        fileMapper.deleteAllByIds(ids);
     }
 
 }
