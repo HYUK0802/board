@@ -18,6 +18,9 @@
 
                 <!--/* 서버로 전달할 공지글 여부 */-->
                 <input type="hidden" id="noticeYn" name="noticeYn" />
+                <!--/* 삭제 처리할 파일 번호 */-->
+                <input type="hidden" id="removeFileIds" name="removeFileIds" />
+                출처: https://congsong.tistory.com/44 [Let's develop:티스토리]
                 <table class="tb tb_row">
                     <colgroup>
                         <col style="width:15%;" /><col style="width:35%;" /><col style="width:15%;" /><col style="width:35%;" />
@@ -64,6 +67,7 @@
                     </tr>
                     </tbody>
                 </table>
+
             </form>
             <p class="btn_set">
                 <button type="button" id="saveBtn" onclick="savePost();" class="btns btn_st3 btn_mid">저장</button>
@@ -119,6 +123,7 @@
 
             document.getElementById('saveBtn').disabled = true;
             form.noticeYn.value = form.isNotice.checked;
+            form.removeFileIds.value = removeFileId.getAll().join(); // 추가
             form.action = [[ ${post == null} ]] ? '/post/save.do' : '/post/update.do';
             form.submit();
         }
