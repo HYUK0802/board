@@ -44,4 +44,8 @@ public class FileService {
         fileMapper.deleteAllByIds(ids);
     }
 
+    public FileResponse findFileById(final Long id) {
+        return fileMapper.findById(id);
+    }
+
 }
