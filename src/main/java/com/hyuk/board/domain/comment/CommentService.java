@@ -15,6 +15,10 @@ public class CommentService {
 
     private final CommentMapper commentMapper;
 
+    public CommentService(CommentMapper commentMapper) {
+        this.commentMapper = commentMapper;
+    }
+
     /**
      * 댓글 저장
      * @param params - 댓글 정보
